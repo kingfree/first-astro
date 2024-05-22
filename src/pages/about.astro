@@ -1,7 +1,8 @@
 ---
 import "../styles/global.css";
-import Navigation from "../components/Navigation.astro";
+import Header from "../components/Header.astro";
 import Layout from "../layouts/Layout.astro";
+import Footer from '../components/Footer.astro';
 
 const pageTitle = "关于我";
 
@@ -18,13 +19,13 @@ const happy = true;
 const finished = false;
 const goal = 3;
 
-const skillColor = "navy";
+const skillColor = "lightblue";
 const fontWeight = "bold",
   textCase = "uppercase";
 ---
 
+<Header />
 <Layout title={pageTitle}>
-  <Navigation />
   <main>
     <h1>{pageTitle}</h1>
     <h2>……和我的新 Astro 网站！</h2>
@@ -61,6 +62,7 @@ const fontWeight = "bold",
 
     {goal === 3 ? <p>我的目标是在三天内完成。</p> : <p>我的目标不是 3 天。</p>}
   </main>
+  <Footer />
 </Layout>
 <style define:vars={{ skillColor, fontWeight, textCase }}>
   h1 {

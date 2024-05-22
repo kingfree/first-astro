@@ -2,12 +2,12 @@
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import "../styles/global.css";
-import Navigation from "../components/Navigation.astro";
+import Header from "../components/Header.astro";
 ---
 
+<Header />
 <Layout title="莓萌">
   <main>
-    <Navigation />
     <svg
       class="astro-a"
       width="495"
@@ -73,6 +73,11 @@ import Navigation from "../components/Navigation.astro";
   </main>
 </Layout>
 
+<script>
+  document.querySelector(".hamburger").addEventListener("click", () => {
+    document.querySelector(".nav-links").classList.toggle("expanded");
+  });
+</script>
 <style>
   main {
     margin: auto;
